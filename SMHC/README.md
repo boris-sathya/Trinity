@@ -1,4 +1,4 @@
-# Smart Home Control Agent
+# Smart Home Controller
 
 ## APIs
 
@@ -16,6 +16,8 @@
 [
 	{
 		"id": "1",
+		"device": "192.168.1.55",
+		"power": "40",
 		"name": "Floor Lamp",
 		"type": "light",
 		"controller": "192.168.1.25",
@@ -23,6 +25,8 @@
 	},
 	{
 		"id": "2",
+		"device": "192.168.1.56",
+		"power": "1000",
 		"name": "Convection Heater",
 		"type": "heater",
 		"controller": "192.168.1.25",
@@ -33,13 +37,15 @@
 
 ### Register New Device
 
-***Request**
+**Request**
 
 `POST /devices`
 
 **Parameters**
 
 - `"id":int`
+- `"device":string`
+- `"power":int`
 - `"name":string`
 - `"type":string`
 - `"controller":string`
@@ -62,6 +68,8 @@
 ```json
 {
 	"id": "2",
+	"device": "192.168.1.56",
+	"power": "1000",
 	"name": "Convection Heater",
 	"type": "heater",
 	"controller": "192.168.1.25",
